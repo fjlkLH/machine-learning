@@ -3,6 +3,20 @@ import urllib.parse
 import json
 import hashlib
 from google_trans_new import google_translator
+import similarity as s
+
+
+
+#语种
+#法语 fra
+#西班牙语 spa
+#日语 jp
+#俄语 ru
+#韩语 kor
+#德语 de
+#英语 en
+#中文 zh
+
 
 # 可更改的有翻译的内容、语种
 def translate_baidu(en_str):
@@ -22,7 +36,7 @@ def translate_baidu(en_str):
     response=urllib.request.urlopen(URL,data)            #传递request对象和转换完格式的数据
     html=response.read().decode('utf-8')          #读取信息并解码
     translate_results=json.loads(html)            #使用JSON
-    print(translate_results)                      #打印出JSON数据
+    #print(translate_results)                      #打印出JSON数据
     translate_results=translate_results['trans_result'][0]['dst']   #找到翻译结果
 
     print('翻译的结果是: %s'%translate_results)               #打印翻译信息
@@ -56,3 +70,5 @@ if __name__ =='__main__':
     translate_youdao(content)
     translate_google(content)
     # 有毒吧你
+
+
