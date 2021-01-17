@@ -70,5 +70,6 @@ if __name__ =='__main__':
     translate_youdao(content)
     translate_google(content)
     # 有毒吧你
+    # sb文宝
 
 
